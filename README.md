@@ -1,37 +1,24 @@
-#  DigitalBank - API REST
+#  DigitalBank-API
 
-Uma API REST profissional desenvolvida em **Java** com o framework **Spring Boot**, integrada ao banco de dados relacional **MySQL**. O projeto nasceu da evolução de um sistema de banco digital via console (terminal) para um servidor web moderno, robusto e escalável de mercado.
+API RESTful de alta performance desenvolvida em Java e Spring Boot para simulação de operações financeiras. Este projeto consolida a migração estratégica de um sistema legado via terminal para uma arquitetura web moderna, scalável e integrada a banco de dados relacional.
 
-##  Tecnologias e Conceitos Dominados
+##  O que diferencia este projeto? (Destaques Técnicos)
+- **Persistência e Integridade:** Mapeamento de entidades complexas e relacionamentos utilizando Spring Data JPA e Hibernate.
+- **Tratamento de Transações:** Uso estratégico do `@Transactional` para garantir que nenhuma operação financeira falhe pela metade, mantendo a consistência absoluta dos saldos.
+- **Evolução de Arquitetura:** Refatoração completa de código estruturado terminal para o padrão MVC (Model-View-Controller) na Web.
 
-Durante o desenvolvimento e a migração da arquitetura, foram aplicados conceitos fundamentais exigidos pelo mercado de desenvolvimento backend:
+## Funcionalidades Implementadas
+- **Core Banking:** Estruturação de contas e gerenciamento automatizado de saldos.
+- **Mecanismo de Movimentações:** Operações de depósitos e saques integradas diretamente ao banco MySQL.
+- **Engine de Transferências:** Sistema de movimentação de valores entre contas com validações de segurança e consistência (venha conferir a lógica no código do `Service`!).
+- **Auditoria Activa:** Listagem e persistência de históricos operacionais.
 
-* **Spring Boot 3 & Maven:** Gerenciamento de dependências, automação de build e inicialização do servidor embutido Apache Tomcat na porta 8080.
-* **Injeção de Dependências (`@Autowired`):** Delegação do ciclo de vida dos objetos e gerenciamento de componentes pelo ecossistema do Spring.
-* **Camada de Controle (`@RestController` & `@RequestMapping`):** Criação de rotas HTTP mapeadas para escutar requisições web através do protocolo HTTP.
-* **Persistência de Dados Moderna (`@Repository` & `JdbcTemplate`):** Integração com banco de dados MySQL, substituindo o JDBC tradicional por abstrações que gerenciam conexões e executam queries de forma limpa.
-* **Encapsulamento e POO:** Criação de entidades de dados estruturadas com mapeamento de tipos modernos do Java, como `LocalDate`.
+##  Tecnologias e Ecossistema
+- **Back-end:** Java 17 / Spring Boot 3 / Spring Web
+- **Persistência & Banco:** Spring Data JPA / MySQL Server
+- **Build & Dependências:** Maven
 
-##  Rotas da API Disponíveis
+---
+ *Dica para Recrutadores: Os principais desafios técnicos de consistência de saldo e isolamento de transações foram resolvidos dentro das camadas de Service. Explore o código-fonte para avaliar a implementação ou entre em contato!*
 
-### Clientes
-* **`GET /ola`** ➔ Rota de teste para verificação da saúde do servidor web.
-* **`GET /ola/cadastrar`** ➔ Endpoint que instancia uma entidade, valida os dados de restrição física do banco e executa o `INSERT` no MySQL local.
-
-##  Estrutura do Banco de Dados (MySQL)
-
-A persistência está estruturada na tabela `clientes` mapeando as seguintes colunas e constraints obrigatórias:
-* `id_cliente` (INT AUTO_INCREMENT PRIMARY KEY)
-* `nome` (VARCHAR)
-* `cpf` (VARCHAR)
-* `email` (VARCHAR)
-* `data_nascimento` (DATE)
-* `celular` (VARCHAR)
-
-##  Como Executar o Projeto Localmente
-
-1. Clone o repositório em sua máquina.
-2. Certifique-se de ter o **MySQL** instalado e crie um schema chamado `digital_bank`.
-3. Abra o arquivo `src/main/resources/application.properties` e atualize as propriedades `spring.datasource.username` e `spring.datasource.password` com as credenciais do seu banco local.
-4. Execute a classe principal `DigitalbankApplication.java` utilizando a sua IDE (VS Code/IntelliJ) ou via terminal com o comando `mvn spring-boot:run`.
-5. Acesse `http://localhost:8080/ola/cadastrar` no seu navegador para testar a inserção automática!
+ [LinkedIn](https://linkedin.com) |  joaovitorsantosdevjava@gmail.com
